@@ -1,0 +1,69 @@
+html, body
+	min-height: 100%
+	height: 100%
+
+html
+	-ms-text-size-adjust: 100%
+	-webkit-text-size-adjust: 100%
+	font-family: 'Cabin', sans-serif
+	@media (max-width: 767.98px)
+		font-size: 12px
+	@media (min-width: 768px) and (max-width: 991.98px)
+		font-size: 13px
+	@media (min-width: 992px) and (max-width: 1199.98px)
+		font-size: 14px
+	@media (min-width: 1200px)
+		font-size: 16px
+
+$bgColor = #171A23
+
+body
+	display: grid
+	place-items: center
+	margin: 0
+	width: 100%
+	overflow-y: scroll
+	background: $bgColor
+	color: white
+	font-size: 3rem
+
+#words
+	position: absolute
+	left: 0
+	top: 0
+	.word
+		--x: 0
+		--y: 0
+		left: calc(var(--x) + 3rem)
+		top: calc(var(--y) + 2.25rem)
+		position: absolute
+		background: rgba(red, 0.3)
+		border-radius: 10ex
+		padding: 0.25em 0.5em
+		white-space: nowrap
+
+.input
+	padding: 1em 1.5em
+	border-radius: 10ex
+	position: relative
+	overflow: hidden
+	&::before
+		content: ''
+		display: block
+		background: $bgColor
+		position: absolute
+		left: 0
+		top: 0
+		z-index: -1
+		width: 100%
+		height: 100%
+		opacity: 0.3
+	input[type=text]
+		font-family: 'Cabin', sans-serif
+		background: none
+		font-size: inherit
+		outline: none
+		border: none
+		// border-bottom: 1px solid rgba(white, 0.3)
+		// padding-bottom: 0.25em
+		color: inherit
